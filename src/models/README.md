@@ -10,7 +10,7 @@ A **model** in software development typically represents the structure of the da
 
 ### Example of a Model:
 
-typescript
+File name example: `src/models/user.model.ts`
 
 Copy code
 
