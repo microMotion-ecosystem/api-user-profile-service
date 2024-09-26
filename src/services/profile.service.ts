@@ -26,7 +26,7 @@ export class ProfileService {
     if (!showHidden) {
       return await this.ProfileModel.find()
         .where('isDeleted')
-        .ne(null)
+        .equals(null)
         .exec();
     } else {
       return await this.ProfileModel.find().select('-log ').exec();
@@ -37,7 +37,7 @@ export class ProfileService {
     if (!showHidden) {
       return await this.ProfileModel.findById(id)
         .where('isDeleted')
-        .ne(true)
+        .equals(null)
         .exec();
     } else {
       return await this.ProfileModel.findById(id).exec();

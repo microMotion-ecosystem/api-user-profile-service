@@ -31,7 +31,7 @@ export class Profile {
   @Prop({ type: [{ date: Date, message: String, by: String }] })
   log: ILog[];
 
-  @Prop({ type: 'date', default: null })
+  @Prop({ type: 'date' })
   isDeleted: string;
 }
 

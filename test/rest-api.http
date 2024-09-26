@@ -37,6 +37,7 @@ x-platform: fuse
 
 
 ### Get all profiles
+#?showHidden=false
 GET http://localhost:5502/api/v1/profile
 Accept: application/json
 Authorization: Bearer <your-access-token>
@@ -45,7 +46,8 @@ x-platform: fuse
 
 
 ### Get a profile by ID
-@profileId = 66f49c997dd92e233204d823
+#?showHidden=false
+@profileId = 66f4afb79cf5c2c99776186e
 GET http://localhost:5502/api/v1/profile/{{profileId}}
 Accept: application/json
 Authorization: Bearer <your-access-token>
