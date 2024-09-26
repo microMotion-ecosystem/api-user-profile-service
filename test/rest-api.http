@@ -19,8 +19,8 @@ Authorization: Bearer <your-access-token>
 x-platform: fuse
 
 {
-  "name": "John Doe",
-  "email": "john.doe@example.com",
+  "name": "Hazem Safwat",
+  "email": "hazem@example.com",
   "mobile": "1234567890",
   "gender": "male",
   "dob": "1990-01-01",
@@ -37,46 +37,37 @@ x-platform: fuse
 
 
 ### Get all profiles
-GET http://localhost:5502/profile
+GET http://localhost:5502/api/v1/profile
 Accept: application/json
 Authorization: Bearer <your-access-token>
-Platform: yu2ahel
+x-platform: fuse
 
 
 
 ### Get a profile by ID
-GET http://localhost:5502/profile/{{profileId}}
+@profileId = 66f49c997dd92e233204d823
+GET http://localhost:5502/api/v1/profile/{{profileId}}
 Accept: application/json
 Authorization: Bearer <your-access-token>
-Platform: yu2ahel
+x-platform: fuse
 
 
 ### Update a profile by ID
-PUT http://localhost:5502/profile/{{profileId}}
+
+PUT http://localhost:5502/api/v1/profile/{{profileId}}
 Content-Type: application/json
 Authorization: Bearer <your-access-token>
-Platform: yu2ahel
+x-platform: fuse
 
 {
-  "name": "Jane Doe",
-  "email": "jane.doe@example.com",
-  "mobile": "0987654321",
-  "gender": "female",
-  "dob": "1992-02-02",
-  "metadata": {
-    "key1": "newValue1",
-    "key2": "newValue2"
-  },
-  "additionalFields": {
-    "field1": "newValue1",
-    "field2": "newValue2"
-  }
+  "name": "Mohamed ali"
+
 }
 
 
 ### Delete a profile by ID
-DELETE http://localhost:5502/profile/{{profileId}}
+DELETE http://localhost:5502/api/v1/profile/{{profileId}}
 Authorization: Bearer <your-access-token>
-Platform: yu2ahel
+x-platform: fuse
 
 ###

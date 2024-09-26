@@ -9,13 +9,14 @@ import {
 } from '@nestjs/common';
 import { ProfileService } from '../services/profile.service';
 import { Profile } from '../models/person.model';
+import { ProfileDto } from "../dtos/profile.dto";
 
 @Controller('api/v1/profile')
 export class ProfileController {
   constructor(private readonly profileService: ProfileService) {}
 
   @Post()
-  async create(@Body() profile: Profile): Promise<Profile> {
+  async create(@Body() profile: ProfileDto): Promise<Profile> {
     return this.profileService.create(profile);
   }
 
@@ -32,13 +33,13 @@ export class ProfileController {
   @Put(':id')
   async update(
     @Param('id') id: string,
-    @Body() profile: Profile,
+    @Body() profile: ProfileDto,
   ): Promise<Profile> {
     return this.profileService.update(id, profile);
   }
 
   @Delete(':id')
   async delete(@Param('id') id: string): Promise<Profile> {
-    return this.profileService.delete(id);
+    return this.profileService.softDelete(id);
   }
 }
